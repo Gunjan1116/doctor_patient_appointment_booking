@@ -1,12 +1,13 @@
 const express= require("express");
 const jwt=require("jsonwebtoken");
 const bcrypt=require("bcrypt");
+const fs=require("fs");
 require("dotenv").config();
 const {Usermodel} =require("../models/userModel");
 
 const userRoute=express.Router();
 
-
+//Route to add new user(doctor/patient)
 userRoute.post("/register",async(req,res)=>{
     const {name,email,password,role,specialty,location}=req.body;
 
@@ -30,6 +31,8 @@ userRoute.post("/register",async(req,res)=>{
         res.json({"msg":"error in register a user"})
     }
 })
+
+//Route to login a user(doctor/patient)
 userRoute.post("/login",async(req,res)=>{
     const {email,password}=req.body;
     try {
@@ -39,7 +42,7 @@ userRoute.post("/login",async(req,res)=>{
         }else{
             bcrypt.compare(password,reqData[0].password,async(err,result)=>{
                 if(result){
-                    let token=jwt.sign({userId:reqData[0]._id},process.env.Key);
+                    let token=jwt.sign({userId:reqData[0]._id,role:reqData[0].role},process.env.Key);
                     res.json({"msg":"Login Success","token":token})
                 }else{
                     res.json({"msg":"Wrong Credentials"})
@@ -53,6 +56,21 @@ userRoute.post("/login",async(req,res)=>{
     }
 })
 
+//Route to logout a user(doctor/patient)
+userRoute.get("/logout", (req,res)=>{
+    const token=req.headers.authorization;
+    try {
+        const blacklistdata=JSON.parse(fs.readFileSync("./blacklist.json","utf-8"))
+        blacklistdata.push(token)
+        fs.writeFileSync("./blacklist.json",JSON.stringify(blacklistdata))
+        res.json({"msg":"Logout Successful"})
+    } catch (error) {
+        console.log("error from logout route",error);
+        res.json({"msg":"error while logout"})
+    }
+    
+    
+ })
 
 module.exports={
     userRoute
