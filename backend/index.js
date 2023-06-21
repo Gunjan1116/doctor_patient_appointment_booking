@@ -1,5 +1,6 @@
 const express=require("express");
 const { connection } = require("./config/db");
+const { userRoute } = require("./routes/userRoute");
 require("dotenv").config();
 const app=express();
 
@@ -9,6 +10,8 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("Welcome to Home Route")
 })
+
+app.use("/user",userRoute)
 
 app.listen(process.env.port,async()=>{
     try {
