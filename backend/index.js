@@ -1,10 +1,12 @@
 const express=require("express");
+const cors=require("cors")
 const { connection } = require("./config/db");
 const { userRoute } = require("./routes/userRoute");
 require("dotenv").config();
 const app=express();
 
 //middleware
+app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,res)=>{
