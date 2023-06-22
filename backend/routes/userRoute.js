@@ -7,6 +7,17 @@ const {Usermodel} =require("../models/userModel");
 
 const userRoute=express.Router();
 
+//Get all the doctors
+userRoute.get("/doctors",async(req,res)=>{
+    try {
+        let allDoctor=await Usermodel.find({role:"doctor"})
+        res.json({"msg":"All doctors details","data":allDoctor})
+    } catch (error) {
+        console.log("error from getting all doctor route",error);
+        res.json({"msg":"error while getting all doctors details"})
+    }
+}) 
+
 //Route to add new user(doctor/patient)
 userRoute.post("/register",async(req,res)=>{
     const {name,email,password,role,specialty,location}=req.body;
