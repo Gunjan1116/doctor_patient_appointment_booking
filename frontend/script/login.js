@@ -26,7 +26,10 @@ async function loginUser(obj){
         sessionStorage.setItem("token",out.token);
         sessionStorage.setItem("role",out.role);
         alert(out.msg);
-        window.location.href="./appointment.html";
+        if(out.msg==="Login Success"){
+            window.location.href="./appointment.html";
+        }
+        
     } catch (error) {
         console.log("error while login from frontend");
         alert("error while login")

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./styles/register.css">
+</head>
+<body>
+    <h1>Doctor Patient Appointment Booking</h1>
+    <header>
+        <nav class="navBar">
+            <ul>
+                <li>
+                    <a href="index.html">Home Page</a>
+                </li>
+                <li>
+                    <a href="register.html">Register Page</a>
+                </li>
+                <li>
+                    <a href="login.html">Login Page</a>
+                </li>
+                <li>
+                    <a href="appointment.html">Appointment Page</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Register As</h1>
+    <div class="selectRole">
+        <button id="doctor">Doctor</button>
+        <button id="patient">Patient</button>
+    </div>
+    <div class="patientDetail">
+        <form action="" id="details" autocomplete="on">
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <input type="text" id="email" placeholder="Enter Your Email" required>
+            <input type="text" id="location" placeholder="Enter Your Current City Name" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    <div class="doctorDetail">
+        <form action="" id="details" autocomplete="on">
+            <input type="text" id="nameD" placeholder="Enter Your Name" required>
+            <input type="text" id="emailD" placeholder="Enter Your Email" required>
+            <input type="text" id="locationD" placeholder="Enter Your Current City Name" required>
+            <select  id="specialty" required>
+                <option value="">--Select Speciality--</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Obstetricians">gynecologist</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Oncologist">Oncologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="Pulmonologist">Pulmonologist</option>
+                <option value="Infectious disease">Infectious disease</option>
+                <option value="Nephrologist">Nephrologist</option>
+                <option value="Endocrinologist">Endocrinologist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Otolaryngologist">Otolaryngologist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Radiologist">Radiologist</option>
+                <option value="Anesthesiologist">Anesthesiologist</option>
+                <option value="Surgeon">Surgeon</option>
+                <option value="Physician">Physician</option>
+              </select>
+            <input type="password" id="passwordD" placeholder="Password" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
+<script src="./script/register.js"></script>
