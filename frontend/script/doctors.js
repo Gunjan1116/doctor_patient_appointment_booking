@@ -24,7 +24,7 @@ function  displayDoctorData(data){
                 <h3>Email:-${elem.email}</h3>
                 <h3>Location:-${elem.location}</h3>
                 <h3>Specialty:-${elem.specialty}</h3>
-                <a href="./appointment.html" class="btn" data-id=${elem._id}>Book Appointment</a>
+                <a href="./bookAppointment.html" class="btn" data-id=${elem._id}>Book Appointment</a>
         </div>
         `
     }).join("")}`

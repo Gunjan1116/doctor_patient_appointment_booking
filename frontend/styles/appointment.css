@@ -35,29 +35,4 @@ h1,h3{
     color: lightcoral;
     margin-bottom: 20px;
 }
-#doctorContainer{
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin:auto;
-    text-align: center;
-    gap:20px;
-    margin-top: 20px;
-}
-#doctorContainer div{
-    border: 1px solid lightcoral;
-    padding: 20px 10px;
-}
-#doctorContainer div .btn{
-    border: 1px solid lightcoral;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: lightcoral;
-    color: lightblue;
-    font-size: 20px;
-}
-#doctorContainer div .btn:hover{
-    background-color: lightblue;
-    color: lightcoral;
-    cursor: pointer;
-}
+

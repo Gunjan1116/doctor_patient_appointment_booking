@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment Page</title>
+    <link rel="stylesheet" href="./styles/bookAppointment.css">
+</head>
+<body>
+    <h1>Doctor Patient Appointment Booking</h1>
+    <header>
+        <nav class="navBar">
+            <ul>
+                <li>
+                    <a href="index.html">Home Page</a>
+                </li>
+                <li>
+                    <a href="register.html">Register Page</a>
+                </li>
+                <li>
+                    <a href="login.html">Login Page</a>
+                </li>
+                <li>
+                    <a href="doctors.html">Doctor Page</a>
+                </li>
+                <li>
+                    <a href="appointment.html">Appointment Page</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Book An Appointment</h1>
+    <div id="mainBody">
+        <div><input id="inputdate" type="date" palceholder="Select the appointment date"  /></div>
+        <div>
+            <select name="slot" id="slotSelect">
+                <option value="">--Please choose an slot option--</option>
+                <option value="8-9">8 AM to 9 AM</option>
+                <option value="9-10">9 AM to 10 AM</option>
+                <option value="4-6">4 PM to 6 PM</option>
+                <option value="7-9">7 PM to 9 PM</option>
+            </select>
+        </div>
+        <div>
+            <button id="bookAppointment">Book An Appointment</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./script/bookAppointment.js"></script>
+
