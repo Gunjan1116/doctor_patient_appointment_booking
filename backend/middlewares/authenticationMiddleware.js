@@ -7,10 +7,12 @@ const authentication=async(req,res,next)=>{
             let decode=jwt.verify(token,process.env.Key);
             let userId=decode.userId;
             let role=decode.role;
+            let email=decode.email;
             //console.log(decode)
             if(decode){
                 req.body.userId=userId;
                 req.body.role=role;
+                req.body.userEmail=email;
                 next();
             }else{
                 res.json({"msg":"Invalid Token"})

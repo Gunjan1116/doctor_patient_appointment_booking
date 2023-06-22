@@ -49,15 +49,15 @@ bookingRoutes.post("/create",authentication,authorisation(["patient"]) , async (
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'ajitkhatua286@gmail.com',
-                pass: process.env.emailpassword
+                user: 'kumargunjan1116@gmail.com',
+                pass: process.env.emailPassword
             }
         });
         const mailOptions = {
-            from: 'ajitkhatua286@gmail.com',
+            from: 'kumargunjan1116@gmail.com',
             to: `${data.userEmail}`,
             subject: 'Booking Confirmation from Rapid fit',
-            text: `Your Booking is confirmed on ${data.bookingDate} date at ${data.bookingSlot} slot.`
+            text: `Your Booking is confirmed on ${data.bookingDate} date.`
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
@@ -106,23 +106,3 @@ bookingRoutes.delete("/remove/:id", authentication,authorisation(["patient"]),as
 module.exports = {
     bookingRoutes
 }
-
-
-// Pediatrician
-// Obstetricians/gynecologist (OBGYNs)
-// Cardiologist
-// Oncologist
-// Gastroenterologist
-// Pulmonologist
-// Infectious disease
-// Nephrologist
-// Endocrinologist
-// Ophthalmologist
-// Otolaryngologist
-// Dermatologist
-// Psychiatrist
-// Neurologist
-// Radiologist
-// Anesthesiologist
-// Surgeon
-// Physician executive
