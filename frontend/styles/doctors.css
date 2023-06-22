@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 100px;
+    height: 80px;
+    font-size: 30px;
+}
+.navBar ul {
+    display: flex;
+}
+
+.navBar ul li a {
+    display: block;
+    padding: 10px 30px;
+    color: lightcoral;
+}
+
+.navBar ul li a:hover {
+    background-color: white;
+    color: lightblue;
+    border-radius: 50px;
+}
+h1,h3{
+    text-align: center;
+    color: lightcoral;
+    margin-bottom: 20px;
+}
+#doctorContainer{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin:auto;
+    text-align: center;
+    gap:20px;
+    margin-top: 20px;
+}
+#doctorContainer div{
+    border: 1px solid lightcoral;
+    padding: 20px 10px;
+}
+#doctorContainer div .btn{
+    border: 1px solid lightcoral;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: lightcoral;
+    color: lightblue;
+    font-size: 20px;
+}
+#doctorContainer div .btn:hover{
+    background-color: lightblue;
+    color: lightcoral;
+    cursor: pointer;
+}
