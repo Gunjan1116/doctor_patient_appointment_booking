@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 100px;
+    height: 80px;
+    font-size: 30px;
+}
+.navBar ul {
+    display: flex;
+}
+
+.navBar ul li a {
+    display: block;
+    padding: 10px 30px;
+    color: lightcoral;
+}
+
+.navBar ul li a:hover {
+    background-color: white;
+    color: lightblue;
+    border-radius: 50px;
+}
+h1{
+    text-align: center;
+    color: lightcoral;
+    margin-bottom: 20px;
+}
+#image{
+    width:100%;
+    margin: auto;
+    text-align: center;
+    height: 400px;
+}
