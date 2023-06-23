@@ -8,6 +8,7 @@ The Doctor Patient Appointment Booking System is a web application that allows u
 - [Usage](#usage)
 - [Code Structure](#code-structure)
 - [API Endpoints](#api-endpoints)
+- [Examples](#examples)
 - [Dependencies](#dependencies)
 - [Deployment Link](#deployment-link)
 
@@ -128,6 +129,14 @@ The code for the Doctor Patient Appointment Booking System is organized into dif
 Please note that the API requires authentication using JWT tokens for certain endpoints, which can be obtained by logging in as a user.
 
 Note: Some endpoints require authentication and authorization based on user roles.
+
+## Examples
+- Doctor details
+  - email:  kumargunjan111@gmail.com,
+  - password: 1234
+- Patient details
+  - email:  vashishtnikhil158@gmail.com,
+  - password: 1234
 
 ## Dependencies
 The Doctor Patient Appointment Booking System relies on the following dependencies:
