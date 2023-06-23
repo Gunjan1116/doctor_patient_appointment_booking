@@ -8,7 +8,7 @@ The Doctor Patient Appointment Booking System is a web application that allows u
 - [Usage](#usage)
 - [Code Structure](#code-structure)
 - [API Endpoints](#api-endpoints)
-- [Examples](#examples)
+- [Login Credentials](#login-credentials)
 - [Dependencies](#dependencies)
 - [Deployment Link](#deployment-link)
 
@@ -130,7 +130,7 @@ Please note that the API requires authentication using JWT tokens for certain en
 
 Note: Some endpoints require authentication and authorization based on user roles.
 
-## Examples
+## Login Credentials
 - Doctor details
   - email:  kumargunjan1116@gmail.com,
   - password: 1234
