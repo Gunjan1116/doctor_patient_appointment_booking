@@ -105,7 +105,8 @@ The code for the Doctor Patient Appointment Booking System is organized into dif
  
 
  - `doctorId` (string): ID of the doctor for the booking.
-  - `appointmentDate` (string): Date of the appointment (format: "YYYY-MM-DD").
+  - `bookingDate` (string): Date of the appointment (format: "YYYY-MM-DD").
+  - `bookingSlot`(string): TimeSlot of the appointment
 - **Response**:
   - `booking` (object): Object containing the details of the created booking.
 
