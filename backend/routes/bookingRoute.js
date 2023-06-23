@@ -3,11 +3,11 @@ const { Bookingmodel } = require("../models/bookingModel");
 const { authentication } = require("../middlewares/authenticationMiddleware");
 const {authorisation}=require("../middlewares/authorizationMiddleware");
 const bookingRoutes = express.Router();
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
 require("dotenv").config()
 
-
-bookingRoutes.get("/paticularUser", authentication,authorisation(["patient","doctor"]),async (req, res) => {//getting paticular user booking data
+//getting paticular user booking data
+bookingRoutes.get("/paticularUser", authentication,authorisation(["patient","doctor"]),async (req, res) => {
     let userId = req.body.userId;
     let role=req.body.role;
     
@@ -27,8 +27,8 @@ bookingRoutes.get("/paticularUser", authentication,authorisation(["patient","doc
 })
 
 
-
-bookingRoutes.post("/create",authentication,authorisation(["patient"]) , async (req, res) => {//create new booking
+//create new booking
+bookingRoutes.post("/create",authentication,authorisation(["patient"]) , async (req, res) => {
     const data = req.body;
     try {
         let allBookings = await Bookingmodel.find({ doctorId: data.doctorId })
@@ -73,8 +73,8 @@ bookingRoutes.post("/create",authentication,authorisation(["patient"]) , async (
     }
 })
 
-
-bookingRoutes.delete("/remove/:id", authentication,authorisation(["patient"]),async (req, res) => {//removing the booking data
+//removing the booking data
+bookingRoutes.delete("/remove/:id", authentication,authorisation(["patient"]),async (req, res) => {
     const ID = req.params.id
     //console.log(ID);
 

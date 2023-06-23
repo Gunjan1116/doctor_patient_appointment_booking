@@ -18,6 +18,31 @@ userRoute.get("/doctors",async(req,res)=>{
     }
 }) 
 
+//get doctors according to location
+userRoute.get("/doctors/:location",async(req,res)=>{
+    let location=req.params.location;
+    try {
+        let allDoctor=await Usermodel.find({role:"doctor",location:{"$regex":location,"$options":"i"}})
+        res.json({"msg":"All doctors details based on location","data":allDoctor})
+    } catch (error) {
+        console.log("error from getting all doctor route",error);
+        res.json({"msg":"error while getting all doctors details based on location"})
+    }
+})
+
+//get doctors based on their specialty
+userRoute.get("/doctors/specialty/:value",async(req,res)=>{
+    let specialty=req.params.value;
+    console.log(specialty)
+    try {
+        let allDoctor=await Usermodel.find({role:"doctor",specialty})
+        res.json({"msg":"All doctors details based on specialty","data":allDoctor})
+    } catch (error) {
+        console.log("error from getting all doctor route",error);
+        res.json({"msg":"error while getting all doctors details based on specialty"})
+    }
+})
+
 //Route to add new user(doctor/patient)
 userRoute.post("/register",async(req,res)=>{
     const {name,email,password,role,specialty,location}=req.body;
