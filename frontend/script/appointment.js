@@ -1,4 +1,4 @@
-let baseUrl=`https://hospialbooking.onrender.com`;
+let baseUrl=`https://dull-teal-walrus-shoe.cyclic.app/`;
 
 let token=sessionStorage.getItem("token");
 

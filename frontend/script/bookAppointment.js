@@ -1,4 +1,4 @@
-let baseUrl=`https://hospialbooking.onrender.com`
+let baseUrl=`https://dull-teal-walrus-shoe.cyclic.app/`
 
 
 document.addEventListener('DOMContentLoaded', function() {

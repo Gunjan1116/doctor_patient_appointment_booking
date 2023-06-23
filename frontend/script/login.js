@@ -1,4 +1,4 @@
-let baseUrl=`https://hospialbooking.onrender.com`;
+let baseUrl=`https://dull-teal-walrus-shoe.cyclic.app/`;
 
 let formLogin=document.querySelector(".allDetailLogin form");
 
@@ -30,7 +30,7 @@ async function loginUser(obj){
         if(out.msg==="Login Success"){
             window.location.href="./appointment.html";
         }
-        
+
     } catch (error) {
         console.log("error while login from frontend");
         alert("error while login")
