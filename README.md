@@ -132,7 +132,7 @@ Note: Some endpoints require authentication and authorization based on user role
 
 ## Examples
 - Doctor details
-  - email:  kumargunjan111@gmail.com,
+  - email:  kumargunjan1116@gmail.com,
   - password: 1234
 - Patient details
   - email:  vashishtnikhil158@gmail.com,
