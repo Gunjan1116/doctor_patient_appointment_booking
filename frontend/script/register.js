@@ -1,4 +1,4 @@
-let baseUrl=`http://localhost:5000`;
+let baseUrl=`https://hospialbooking.onrender.com`;
 
 let doctorBtn=document.getElementById("doctor");
 let patientBtn=document.getElementById("patient");

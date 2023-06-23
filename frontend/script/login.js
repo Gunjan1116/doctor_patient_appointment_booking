@@ -1,4 +1,4 @@
-let baseUrl=`http://localhost:5000`;
+let baseUrl=`https://hospialbooking.onrender.com`;
 
 let formLogin=document.querySelector(".allDetailLogin form");
 
