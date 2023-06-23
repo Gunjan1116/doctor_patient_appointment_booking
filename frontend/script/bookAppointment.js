@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (day < 10)
       day = '0' + day.toString();
   
-    let minDate = year + '-' + month + '-' + day;
+    let minDate = year + '-' + month + '-' + (day+1);
     document.getElementById('inputdate').setAttribute('min', minDate);
   });
   
@@ -57,7 +57,7 @@ async function bookAnAppointment(obj,token){
         }else if(out.msg=="new booking created successfully Confiramtion sent to email"){
          alert(`Hii Your booking is confirmed on ${obj.bookingDate} and mail is send to your register email`)
         }else{
-         alert("Something went wrong while booking appointment!!")
+         alert(out.msg);
         }
      } catch (error) {
          console.log("err",error.message)

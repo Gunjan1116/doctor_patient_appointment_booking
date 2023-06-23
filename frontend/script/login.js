@@ -25,6 +25,7 @@ async function loginUser(obj){
         let out=await res.json();
         sessionStorage.setItem("token",out.token);
         sessionStorage.setItem("role",out.role);
+        sessionStorage.setItem("name",out.name);
         alert(out.msg);
         if(out.msg==="Login Success"){
             window.location.href="./appointment.html";

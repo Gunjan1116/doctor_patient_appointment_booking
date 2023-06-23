@@ -35,4 +35,33 @@ h1,h3{
     color: lightcoral;
     margin-bottom: 20px;
 }
+table{
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+  }
+  td, th {
+      border: 1px solid lightcoral;
+      text-align: center;
+      padding: 8px;
+      height: 30px;
+    }
+  tr:nth-child(even) {
+     background-color: #333;
+  }  
+ 
 
+  .cancelAppointment{
+    border-radius: 10px;
+    background-color: lightcoral;
+    padding: 10px 20px;
+    color: lightblue;
+    font-size: 15px;
+    border: 1px solid lightcoral;
+  }
+  .cancelAppointment:hover{
+    background-color: lightblue;
+    color: lightcoral;
+    border: 1px solid lightcoral;
+    cursor: pointer;
+  }
