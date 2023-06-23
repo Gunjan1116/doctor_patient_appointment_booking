@@ -51,7 +51,7 @@ table{
   }  
  
 
-  .cancelAppointment{
+  .cancelAppointment,.videoCall{
     border-radius: 10px;
     background-color: lightcoral;
     padding: 10px 20px;
@@ -59,7 +59,7 @@ table{
     font-size: 15px;
     border: 1px solid lightcoral;
   }
-  .cancelAppointment:hover{
+  .cancelAppointment:hover,.videoCall:hover{
     background-color: lightblue;
     color: lightcoral;
     border: 1px solid lightcoral;

@@ -1,6 +1,8 @@
 let baseUrl=`http://localhost:5000`
 
 let doctorContainer=document.querySelector("#doctorContainer");
+let searchBtn=document.getElementById("searchBtn");
+let specialty=document.getElementById("specialty");
 
 async function getAllDoctor(){
     try {
@@ -38,4 +40,41 @@ function  displayDoctorData(data){
         })
     }
 
+}
+
+searchBtn.addEventListener("click",()=>{
+    let searchValue=document.getElementById("doctorLocation").value;
+    fetchDoctorBasedOnLocation(searchValue);
+})
+
+specialty.addEventListener("change",()=>{
+    let searchValue=specialty.value;
+    //console.log(searchValue)
+    if(searchValue===""){
+        getAllDoctor()
+    }else{
+        fetchDoctorBasedOnSpecialty(searchValue)
+    }
+})
+
+async function fetchDoctorBasedOnLocation(location){
+    try {
+        let res= await fetch(`${baseUrl}/user/doctors/${location}`)
+        let out =await res.json()
+        displayDoctorData(out.data)
+        } catch (error) {
+            console.log(error)
+        }
+}
+
+async function fetchDoctorBasedOnSpecialty(specialty){
+    //console.log(specialty);
+    try {
+        let res= await fetch(`${baseUrl}/user/doctors/specialty/${specialty}`)
+        let out =await res.json()
+        //console.log(out,"**");
+        displayDoctorData(out.data)
+        } catch (error) {
+            console.log(error)
+        }
 }

@@ -1,14 +1,14 @@
 let baseUrl=`http://localhost:5000`;
 
 let token=sessionStorage.getItem("token");
-let role=sessionStorage.getItem("role");
-let name=sessionStorage.getItem("name");
 
 if(token){
     
 let cont=document.getElementById("displayAppointment");
 
 async function getAllAppointments(){
+    let role=sessionStorage.getItem("role");
+    let name=sessionStorage.getItem("name");
     try {
         let res=await fetch(`${baseUrl}/booking/paticularUser`,{
             method:'GET',
@@ -18,8 +18,8 @@ async function getAllAppointments(){
             },
            })
            let out=await res.json();
-           console.log(out);
-           displayAllAppointments(out.Data,role,name,token)
+           //console.log(out);
+           displayAllAppointments(out.Data,name,role)
     } catch (error) {
         console.log(error.message);
         console.log("error from fetching all appointments")
@@ -27,7 +27,7 @@ async function getAllAppointments(){
 }
 getAllAppointments();
 
-function displayAllAppointments(arr,role,name,token){
+function displayAllAppointments(arr,name,role){
     cont.innerHTML=""
     cont.innerHTML=`
    <h1 style="text-align: center; margin-bottom:20px">All Bookings of ${role} ${name}</h1>
@@ -39,6 +39,7 @@ function displayAllAppointments(arr,role,name,token){
                <th>Date</th>
                <th>Time Slot</th>
                <th>Cancel Appointments</th>
+               <th>Video Call</th>
            </tr>
        </thead>
        <tbody>
@@ -49,7 +50,8 @@ function displayAllAppointments(arr,role,name,token){
                 <td>${elem.userEmail}</td>
                 <td>${elem.bookingDate}</td>
                 <td>${elem.bookingSlot=="8-9"?"8 AM to 9 AM":elem.bookingSlot=="9-10"?"9 AM to 10 AM":elem.bookingSlot=="4-5"?"4 PM to 5 PM":"7 PM to 8 PM"}</td>
-                <td><button class="cancelAppointment" data-id=${elem._id}>Cancel Appointments</button></td>
+                <td><button class="cancelAppointment" data-id=${elem._id} >Cancel Appointments</button></td>
+                <td><button class="videoCall" data-id=${elem._id} >Video Call</button></td>
             </tr>
         `
        }).join("")}
