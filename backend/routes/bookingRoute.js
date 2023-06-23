@@ -7,27 +7,26 @@ const nodemailer = require("nodemailer")
 require("dotenv").config()
 
 
-bookingRoutes.get("/paticularUser", authentication,authorisation(["patient"]),async (req, res) => {//getting paticular user booking data
+bookingRoutes.get("/paticularUser", authentication,authorisation(["patient","doctor"]),async (req, res) => {//getting paticular user booking data
     let userId = req.body.userId;
+    let role=req.body.role;
+    
     try {
-        const reqData = await Bookingmodel.find({ userId });
-        res.json({" msg": `All booking data of userId ${userId}`, "Data": reqData })
+        if(role==="patient"){
+            const reqData = await Bookingmodel.find({ userId });
+            res.json({" msg": `All booking data of userId ${userId}`, "Data": reqData })
+        }else{
+            const reqData = await Bookingmodel.find({ doctorId:userId });
+            res.json({" msg": `All booking data of userId ${userId}`, "Data": reqData })
+        }
+        
     } catch (error) {
         console.log("error from getting paticular user booking data", error.message);
         res.json({ "msg": "error in getting paticular user booking data", "errorMsg": error.message })
     }
 })
 
-bookingRoutes.get("/:doctorId",authentication,authorisation(["doctor"]), async (req, res) => {//getting paticular doctor booking data
-    let doctorId = req.params.doctorId;
-    try {
-        const reqData = await Bookingmodel.find({ doctorId });
-        res.json({ "msg": `All booking data of doctorId ${doctorId}`, "Data": reqData })
-    } catch (error) {
-        console.log("error from getting paticular doctor booking data", error.message);
-        res.json({ "msg": "error in getting paticular doctor booking data", "errorMsg": error.message })
-    }
-})
+
 
 bookingRoutes.post("/create",authentication,authorisation(["patient"]) , async (req, res) => {//create new booking
     const data = req.body;

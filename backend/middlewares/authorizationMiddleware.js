@@ -7,7 +7,7 @@ const authorisation=(role_array)=>{
       if(role_array.includes(userRole)){
         next()
       }else{
-        res.send("Your are not authorised")
+        res.send({"msg":"Your are not authorised"})
       }
     }
     
