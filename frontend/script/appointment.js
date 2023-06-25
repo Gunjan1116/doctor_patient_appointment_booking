@@ -1,4 +1,4 @@
-let baseUrl=`https://dull-teal-walrus-shoe.cyclic.app/`;
+let baseUrl=`http://localhost:5000`;
 
 let token=sessionStorage.getItem("token");
 
@@ -69,6 +69,17 @@ function displayAllAppointments(arr,name,role){
                 removeAppointment(id,token);
            })
       }
+
+      let videoCallBtns=document.querySelectorAll(".videoCall")
+     
+      for(let videoCallBtn  of videoCallBtns){
+        videoCallBtn.addEventListener("click",(e)=>{
+                let id=e.target.dataset.id
+                //console.log(id);
+                window.open(`http://localhost:5000/${id}`,"_blank")
+           })
+      }
+
 }
 
 async function removeAppointment(id,token){

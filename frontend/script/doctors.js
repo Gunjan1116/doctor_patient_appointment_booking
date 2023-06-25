@@ -1,4 +1,4 @@
-let baseUrl=`https://dull-teal-walrus-shoe.cyclic.app/`
+let baseUrl=`http://localhost:5000`
 
 let doctorContainer=document.querySelector("#doctorContainer");
 let searchBtn=document.getElementById("searchBtn");
