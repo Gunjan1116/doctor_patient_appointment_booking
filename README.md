@@ -17,10 +17,12 @@ The Doctor Patient Appointment Booking System is a web application that allows u
 - [Video Presentation Link](https://www.youtube.com/watch?v=luw6D1K9f_c)
 
 ## Installation
+Video call functionality will not work on deployed link to experience video calling functionality set up project locally.
 To set up the Doctor Patient Appointment Booking System, follow these steps:
 
 1. Clone the repository or download the source code files.
-2. Install the required dependencies by running the following command:
+2.  Go to the backend folder using command `cd backend`
+3. Install the required dependencies by running the following command:command:
    ```
    npm install
    ```
@@ -32,8 +34,11 @@ To set up the Doctor Patient Appointment Booking System, follow these steps:
 ## Usage
 To start the Doctor Patient Appointment Booking System, run the following command:
 ```
-node index.js
+  1. npm run server - To run node.js server
+  2. peerjs --port 3001 - To Start Peer server
 ```
+Both should be run on two different terminals.
+
 The server will start running at the specified port, and the MongoDB connection will be established. You can then access the different endpoints using a REST client or a web browser.
 
 ## Code Structure
